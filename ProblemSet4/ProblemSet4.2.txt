@@ -1,0 +1,2 @@
+// Only use integers 1-8 for this code. If the integer is greater than 8 or less than 1, go to the previous step
+// When any specific 'i' is used, print 'i' number of #s, then new line
