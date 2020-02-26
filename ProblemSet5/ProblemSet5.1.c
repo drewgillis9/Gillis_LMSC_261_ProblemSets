@@ -2,7 +2,7 @@
 
 int main(){
     FILE *LoremIpsum;
-    char abc;
+char abc;
 
     LoremIpsum = fopen("/Users/Drew/Documents/GitHub/Gillis_LMSC_261_ProblemSets/ProblemSet5/LoremIpsum.txt", "r");
 
@@ -11,9 +11,9 @@ int main(){
         return 1;
     }
 
-    FILE *LoremIpsumCopy;
+ FILE *LoremIpsumCopy;
 
-    LoremIpsumCopy = ("LoremIpsumCopy.txt", "w");
+ LoremIpsumCopy = fopen("LoremIpsumCopy.txt", "w");
 
     if(LoremIpsum == NULL){
         printf("LoremIpsumCopy.txt cannot be opened\n");
@@ -22,9 +22,9 @@ int main(){
 
 int c;
 
-while((c = fgetc(LoremIpsum))!= EOF) printf("%c", c);
+ while((c = fgetc(LoremIpsum))!= EOF) printf("%c", c);
 
-if ((LoremIpsum = fopen("/Users/Drew/Documents/GitHub/Gillis_LMSC_261_ProblemSets/ProblemSet5/LoremIpsum.txt", "r")))
+ if ((LoremIpsum = fopen("/Users/Drew/Documents/GitHub/Gillis_LMSC_261_ProblemSets/ProblemSet5/LoremIpsum.txt", "r")))
     {
         c = fgetc(LoremIpsum);
         LoremIpsumCopy = fopen("LoremIpsumCopy.txt", "w");
@@ -35,11 +35,11 @@ if ((LoremIpsum = fopen("/Users/Drew/Documents/GitHub/Gillis_LMSC_261_ProblemSet
         }
     }
 
-while((c = fgetc(LoremIpsum)) != EOF){
-    fputc (c, LoremIpsumCopy);
-        if (c==' '){
-            fputc('\n', LoremIpsumCopy);
-        }
+ while((c=fgetc(LoremIpsum)) != EOF){
+    fputc(c, LoremIpsumCopy);
+    if (c==' '){
+        fputc('\n', LoremIpsumCopy);
+    }
 }   
 
 if(LoremIpsum)fclose(LoremIpsum);
