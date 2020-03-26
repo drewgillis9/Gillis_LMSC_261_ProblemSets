@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Background Colors
+        </title>
+    </head>
+    <body>
+        <button id="red">R</button>
+        <button id="green">G</button>
+        <button id="blue">B</button>
+
+        <script>
+            // we gonna use the body to change the background color
+            let body = document.querySelector("body");
+            document.querySelector("red").onclick = function(){
+                body.style.backgroundColor = 'red'
+            }
+        </script>
+    </body>
+</html>

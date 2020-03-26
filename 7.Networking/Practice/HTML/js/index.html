@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <script>
+        // javascript version of style in html
+            function greet(){
+                //#name is id
+                //.name is class
+                // this is string concatination in JS, so much easier. just use +
+                alert("Hello, " + document.querySelector("#name").value);
+            }
+        </script>
+    </head>
+    <body>
+        <!-- form is for user input -->
+        <form onsubmit="greet(); return false">
+            <input autocomplete="off" autofocus id="name" 
+            placeholder="Name" type="text" class="yay">
+            <input type="submit">
+        </form>
+    </body>
+</html>
