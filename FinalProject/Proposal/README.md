@@ -1,3 +1,23 @@
+###Project Name
+
+Proposal
+
+###Submitted by
+
+Drew Gillis
+
+###For Course
+
+LMSC-261
+
+###Due Date
+
+04:00:00 PM on 4/8/2020
+
+###Submission Date
+
+3:25:00 PM on 4/8/2020
+
 ##Proposal
 
 ###What will (likely) be the title of your project?
