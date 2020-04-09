@@ -1,65 +1,32 @@
 import csv
-import itertools
 
-
+# open up numbers.csv
 csv_file = open("numbers.csv", "r")
 csv_reader = csv.reader(csv_file)
 
-    # for row in csv_reader:
-    #     print(row)
+# open up reverse.csv
+csv_new = open('reverse.csv', 'w')
+csv_writer = csv.writer(csv_new)
 
-reverse = open('reverse.csv', 'w')
-csv_writer = csv.writer(reverse)
-
+# take reversed csv_reader and dump into csv_writer
 for row in csv_reader:
-    csv.writer(reverse).writerows(itertools.islice(csv_reader, 0, 50))
+    row.reverse()
+    csv_writer.writerow(row)
 
-reverse.close()
+# close both files, need to reopen csv_new as a read file
+csv_file.close()
+csv_new.close()
 
 with open('reverse.csv', 'r') as reverseRows:
-    for row in reversed(list(csv.reader(reverseRows))):
-        # print (', '.join(row))
-        print(row[0:])
-        
-def get_averages(csv):
-    row_sums = None
-    with open(reverseRows) as file:
-        lines = file.readlines()
-        rows_of_numbers = [map(float, line.split(',')) for line in lines]
-        sums = map(sum, zip(*columns_of_numbers))
-        averages = [sum_item / len(lines) for sum_item in sums]
-        return averages
-
-def main():
-    get_averages(reverseRows)
-    print('The average value of row 1 is {0}'.format(averages))
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # average = 0
-    # sum   = 0
-    # def rowSum(reverseRows):
-    #     for row in reverseRows:
-    #         return sum([int(i) for i in row if i.isdigit()]) 
-    #         scores = row[1:]
-    #         average = 1.0 * sum / len(scores)
-    #         print("The average value of row %d is %f", row, average)
-
-    # rowSum(reverseRows)
-
-csv_file.close()
+    for row in list(csv.reader(reverseRows)):
+        # reset sum for each row
+        sum = 0
+        # for loop for each data point (30 columns) making sum for each row
+        for i in range(30):
+            sum += int(row[i])
+        # average equation for each row
+        average = float(sum / 30)
+        # print that average, formatted to 2 decimal points
+        print("The average for this row is: {:0.2f}".format(average))
 
 
